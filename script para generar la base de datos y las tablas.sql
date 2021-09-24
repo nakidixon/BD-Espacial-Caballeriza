@@ -3,7 +3,6 @@
 --Crea la BD
 CREATE DATABASE Caballeriza
 
-
 --Creación de tablas para personas
 GO
 --Crea tabla padre para las personas
@@ -107,3 +106,4 @@ CREATE TABLE Bitacora(
 	idServicioXCaballo INT NOT NULL FOREIGN KEY REFERENCES ServicioXCaballo(id),
 	fecha DATE NOT NULL
 )
+
