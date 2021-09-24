@@ -50,3 +50,8 @@ DECLARE @a INT;
 EXEC ConsultarCaballosVecino 1,@a OUTPUT
 SELECT @a
 
+
+--Prueba del procedimiento ConsultarSlotVacio
+DECLARE @a INT;
+EXEC ConsultarSlotVacio 1, 3, @a OUTPUT
+SELECT @a
