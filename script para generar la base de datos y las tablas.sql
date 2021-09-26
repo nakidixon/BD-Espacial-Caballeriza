@@ -39,17 +39,7 @@ CREATE TABLE Raza(
 )
 
 GO
---tabla caballo
-CREATE TABLE Caballo(
-	id INT PRIMARY KEY IDENTITY(1,1),
-	idCliente INT NOT NULL FOREIGN KEY REFERENCES Cliente(id),
-	idRaza INT NOT NULL FOREIGN KEY REFERENCES Raza(id),
-	nombre VARCHAR(64) NOT NULL, 
-	edad INT NOT NULL,
-	campoOcupado GEOMETRY NOT NULL
-)
 
-GO
 --Tablas para la caballeriza y sus partes
 
 --Crea la tabla para la caballeriza
@@ -69,6 +59,17 @@ CREATE TABLE PartesCaballeriza(
 	campoEnCaballeriza GEOMETRY NOT NULL
 )
 
+GO
+--tabla caballo
+CREATE TABLE Caballo(
+	id INT PRIMARY KEY IDENTITY(1,1),
+	idCliente INT NOT NULL FOREIGN KEY REFERENCES Cliente(id),
+	idRaza INT NOT NULL FOREIGN KEY REFERENCES Raza(id),
+	idParteCaballeriza INT NOT NULL FOREIGN KEY REFERENCES PartesCaballeriza(id),
+	nombre VARCHAR(64) NOT NULL, 
+	edad INT NOT NULL,
+	campoOcupado GEOMETRY NOT NULL
+)
 
 GO
 --Tablas para factura y servicios
